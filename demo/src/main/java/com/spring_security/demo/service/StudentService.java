@@ -15,7 +15,7 @@ public class StudentService {
         students.add(new Student(1,"Yousef",10));
         students.add(new Student(2,"joe",50));
         students.add(new Student(3,"mohamed",99));
-        students.add(new Student(4,"hanady",100));
+        students.add(new Student(4,"Kamal",100));
     }
     public String addStudent(Student student)
     {

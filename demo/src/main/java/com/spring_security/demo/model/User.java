@@ -1,5 +1,6 @@
 package com.spring_security.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.spring_security.demo.enums.Roles;
 import jakarta.persistence.*;
 
@@ -13,6 +14,7 @@ public class User {
     @Column(unique = true,nullable = false)
     private String username;
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
 
     @Enumerated(EnumType.STRING)

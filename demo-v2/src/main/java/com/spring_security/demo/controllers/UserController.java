@@ -13,14 +13,14 @@ import static com.spring_security.demo.enums.Roles.ADMIN;
 
 @RestController
 @RequestMapping("/api")
-@PreAuthorize("hasAnyRole('ADMIN','USER')")
+@PreAuthorize("hasRole('ADMIN')")
 public class UserController {
 
     @Autowired
     private UserServiceImpl userService;
 
 
-    @PreAuthorize("hasAuthority('admin:read') or hasAuthority('user:read')")
+    @PreAuthorize("(hasAuthority('admin:read') or hasAuthority('user:read'))")
     @GetMapping("/users/{id}")
     public UserDTO viewUserDetails(@PathVariable int id){
         return userService.ViewUser(id);

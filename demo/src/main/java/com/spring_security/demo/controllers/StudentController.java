@@ -17,23 +17,22 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping("/students")
-    public List<Student> viewStudents(){
+    public List<Student> viewStudents() {
         return studentService.getStudents();
     }
 
     @GetMapping("/students/{id}")
-    public Student viewStudent(@PathVariable int id){
+    public Student viewStudent(@PathVariable int id) {
         return studentService.getStudent(id);
     }
 
     @GetMapping("/csrf-token")
-    public CsrfToken viewCSRFToken(HttpServletRequest request){
+    public CsrfToken viewCSRFToken(HttpServletRequest request) {
         return (CsrfToken) request.getAttribute("_csrf");
     }
 
     @PostMapping("/students")
-    public String genStudent(@RequestBody Student student)
-    {
+    public String genStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
     }
 }
